@@ -3,13 +3,13 @@ function [image_obj, networknames, imagenames] = load_image_set(image_names_or_k
 % object.  Useful for loading sets of canonical masks or patterns.
 %
 % - Checks whether images exist on path
-% - Returns full image names with path names
 % - Returns formatted networknames for plot labels
+% - Returns full image names with path names
 %
 % Usage:
 % ::
 %
-%    [imgs, names] = load_image_set(image_names_or_keyword)
+%    [imgs, nwnames, imgnames] = load_image_set(image_names_or_keyword, [optional_inputs])
 %
 % ..
 %     Author and copyright information:
@@ -166,27 +166,27 @@ function [image_obj, networknames, imagenames] = load_image_set(image_names_or_k
 %
 % :Optional inputs:
 %
-%   **noverbose:**
+%   **'noverbose':**
 %       Suppress printing of all loaded image names. Default is to print
 %       all image names.
 %
-%  **md5check:**
+%  **'md5check':**
 %       Perform md5 hash check if supported for dataset. If verbosity is
 %       enabled md5 check results will be returned to stdout.
 %
-%  **forcedl:**
+%  **'forcedl':**
 %       Force download without prompting for permission if dataset is
 %       missing.
 %
 % :Outputs:
 %
-%   **image_obj:**
+%   **imgs:**
 %        fmri_data object with the maps loaded
 %
-%   **networknames:**
+%   **nwnames:**
 %        cell array of names based on the image names or custom titles
 %
-%   **imagenames:**
+%   **imgnames:**
 %        cell array of names of images loaded
 %
 % :Examples:
